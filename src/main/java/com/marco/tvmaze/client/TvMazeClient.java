@@ -25,4 +25,12 @@ public class TvMazeClient {
                 .retrieve()
                 .body(TvMazeSearchResult[].class);
     }
+
+    public TvMazeShow getShowById(Integer showId) {
+        return restClient.get()
+                .uri("/shows/{showId}", showId)
+                .retrieve()
+                .body(TvMazeShow.class);
+    }
+
 }

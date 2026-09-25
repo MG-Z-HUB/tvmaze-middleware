@@ -55,4 +55,11 @@ public class TvMazeService {
 
         return null;
     }
+
+    public ShowResponse getShowById(Integer showId) {
+
+        TvMazeShow show = tvMazeClient.getShowById(showId);
+        return toShowResponse(show);
+    }
+
 }

@@ -3,6 +3,7 @@ package com.marco.tvmaze.controller;
 import com.marco.tvmaze.dto.ShowResponse;
 import com.marco.tvmaze.service.TvMazeService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,5 +25,12 @@ public class ShowController {
             @RequestParam String query) {
 
         return tvMazeService.searchShows(query);
+    }
+
+    @GetMapping("/{showId}")
+    public ShowResponse getShowById(
+            @PathVariable Integer showId) {
+
+        return tvMazeService.getShowById(showId);
     }
 }
