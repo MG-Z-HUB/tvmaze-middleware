@@ -16,13 +16,13 @@ public class TvMazeClient {
                 .build();
     }
 
-    public TvMazeShow[] searchShows(String query) {
+    public TvMazeSearchResult[] searchShows(String query) {
         return restClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .path("/search/shows")
                         .queryParam("q", query)
                         .build())
                 .retrieve()
-                .body(TvMazeShow[].class);
+                .body(TvMazeSearchResult[].class);
     }
 }
