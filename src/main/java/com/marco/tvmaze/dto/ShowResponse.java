@@ -2,6 +2,8 @@ package com.marco.tvmaze.dto;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class ShowResponse {
 
@@ -10,4 +12,5 @@ public class ShowResponse {
     private String channel;
     private String summary;
     private String[] genres;
+    private List<CommentResponse> comments;
 }
